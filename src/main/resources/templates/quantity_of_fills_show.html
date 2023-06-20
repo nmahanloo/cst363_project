@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<link href="/display.css" rel="stylesheet">
+</head>
+<style>
+	table, th, td {
+		border:1px solid black;
+	}
+</style>
+<body>
+	<h1>Result:</h1>
+	<p>
+		<span th:text="${message}" ></span>
+	</p>
+	<table style="width:100%">
+		<tr>
+			<td><b th:text="No."></b></td>
+			<td><b th:text="Drug"></b></td>
+			<td><b th:text="Quantity"></b></td>
+		</tr>
+		<tr th:each="drug : ${filled_quantity}">
+			<td><span th:text="*{drug.no}"></span></td>
+			<td><span th:text="*{drug.tradeName}"></span></td>
+			<td><span th:text="*{drug.quantity}"></span></td>
+		</tr>
+	</table>
+</body>
+</html>
